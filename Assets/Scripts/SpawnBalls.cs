@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class SpawnBalls : MonoBehaviour
 {
@@ -27,7 +28,21 @@ public class SpawnBalls : MonoBehaviour
         ballIndex = Random.Range(0, ballPrefabsArray.Length);
         Instantiate(ballPrefabsArray[ballIndex],
         RandomSpawnPos(),
-        Quaternion.Euler(0, 23, 0));
+        Quaternion.Euler(90, 0, 0));
+    }
+
+    private void BallsInBounds() 
+    {
+        //Limite por la izquierda
+        if (pos.x < -xRange) 
+        {
+            transform.position = new Vector3(-xRange, pos.y, pos.z);
+        }
+
+        // Limite por la derecha
+        {
+            transform.position = new Vector3(xRange, pos.y, pos.z);
+        }
     }
 
     private Vector3 RandomSpawnPos() 
