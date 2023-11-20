@@ -22,7 +22,7 @@ public class SpawnBalls : MonoBehaviour
         InvokeRepeating("SpawnRandomBall",
              startDelay, spawnInterval);
     }
-
+/*
     private void SpawnRandomBall() 
     { 
         ballIndex = Random.Range(0, ballPrefabsArray.Length);
@@ -31,6 +31,7 @@ public class SpawnBalls : MonoBehaviour
         Quaternion.Euler(90, 0, 0));
     }
 
+    
     private void BallsInBounds() 
     {
         //Limite por la izquierda
@@ -43,6 +44,7 @@ public class SpawnBalls : MonoBehaviour
         {
             transform.position = new Vector3(xRange, pos.y, pos.z);
         }
+    
     }
 
     private Vector3 RandomSpawnPos() 
@@ -50,5 +52,5 @@ public class SpawnBalls : MonoBehaviour
         float randomX = Random.Range(spawnRangeMin, spawnRangeMax);
         return new Vector3(randomX, spawnPosY, 0);
     }
-    
+    */
 }
